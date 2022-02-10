@@ -1,3 +1,4 @@
+SpringBoot에서 Redis를 적용시키기 위한 모듈로
 Jedis나 Lettuce를 사용한다고 한다.
 
 하지만, Jedis는 업데이트가 더이상 되고 있지 않을 뿐더러 Lettuce의 장점 때문에 Lettuce를 사용하는 추세
@@ -43,7 +44,7 @@ public class RedisConfiguration{
         return RedisClient.create(redisURI);
 	}
     @Bean
-    public StatefulRedisPubSubConnection<String, String> connectSub(RedisClient redisClient){
+    public StatefulRedisPubSubConnection<String, String> connect(RedisClient redisClient){
         return redisClient.connectPubSub();
     }
 }
